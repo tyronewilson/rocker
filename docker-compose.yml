@@ -6,6 +6,7 @@ services:
     image: busybox
     volumes:
       - ./api:/srv/api
+      - ./web:/srv/web
 
   api: &ruby_base
     build: ./api
@@ -16,3 +17,11 @@ services:
     build: databases/postgres
     volumes:
       - .pgdata:/var/lib/postgresql/
+
+  web:
+    build: web
+    command: gulp serve-dev
+    volumes_from:
+      - src
+    ports:
+      - 3000:3000
