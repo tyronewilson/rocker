@@ -32,6 +32,9 @@ services:
   redis:
     image: redis
 
+  dynamodb:
+    build: databases/dynamodb-local/
+
   postgres:
     build: databases/postgres
     volumes:
