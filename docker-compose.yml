@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  # Easy way to reference our source code.
+  src:
+    image: busybox
+    volumes:
+      - ./api:/srv/api
+
+  api: &ruby_base
+    build: ./api
+    volumes_from:
+      - src
+
+  postgres:
+    build: databases/postgres
+    volumes:
+      - .pgdata:/var/lib/postgresql/
