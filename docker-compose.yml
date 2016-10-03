@@ -8,8 +8,18 @@ services:
       - ./api:/srv/api
       - ./web:/srv/web
 
+  # Main entry point to the application
+  router:
+    build: router
+    links:
+      - api
+      - web
+    ports:
+      - 80:80
+
   api: &ruby_base
     build: ./api
+    command: script/servers/start
     volumes_from:
       - src
 
