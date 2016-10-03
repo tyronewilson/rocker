@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "script/servers/bundle"
+
+bundle check || bundle install --jobs 8 -V

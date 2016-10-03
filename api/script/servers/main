@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "script/servers/main"
+
+file="tmp/pids/server.pid"
+if [ -f "$file" ]
+then
+  rm $file
+fi
+
+bin/rails server -b "0.0.0.0" -p $APPLICATION_PORT

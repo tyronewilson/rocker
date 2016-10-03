@@ -1,0 +1,11 @@
+#!/bin/bash
+
+file="/var/lib/api/firstrun"
+if [ -f "$file" ]
+then
+  echo "script/servers/firstrun already ran"
+else
+  echo "script/servers/firstrun"
+  bin/rake db:create && bin/rake db:migrate
+  touch $file
+fi

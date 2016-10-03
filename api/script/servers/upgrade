@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "script/servers/upgrade"
+
+bin/rake db:migrate

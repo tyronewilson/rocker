@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "script/servers/start"
+
+script/servers/bundle && script/servers/firstrun && script/servers/upgrade && script/servers/main
