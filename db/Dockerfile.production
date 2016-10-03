@@ -1,0 +1,5 @@
+FROM postgres:9.5
+
+RUN apt-get install postgresql-client-9.5
+
+COPY ./init.sql.production /docker-entrypoint-initdb.d/init.sql
