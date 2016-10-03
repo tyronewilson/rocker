@@ -1,0 +1,7 @@
+#!/bin/bash
+
+current_user=$(whoami)
+
+echo "Reclaiming all files generated as root for $current_user"
+
+sudo chown $current_user:$current_user -R .

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+containerID=$(docker-compose ps -q $1)
+
+echo "Attaching to container....... "
+
+docker attach $containerID

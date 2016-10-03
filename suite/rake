@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Running rake command in api container"
+docker-compose run api bin/rake $@

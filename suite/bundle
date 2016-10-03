@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Running bundler in api container"
+docker-compose run api bin/bundle $@

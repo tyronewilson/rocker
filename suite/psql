@@ -1,0 +1,9 @@
+#!/bin/bash
+
+up -d db
+
+containerID=$(docker-compose ps -q db)
+
+echo "Running psql in running db container......."
+
+docker-compose exec db su postgres -c psql

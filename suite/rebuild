@@ -1,0 +1,10 @@
+#!/bin/bash
+
+APP=$1
+
+docker-compose build $APP
+docker-compose stop $APP
+docker-compose up -d $APP
+
+echo 'Restarting the router to ensure changes are picked up.....'
+docker-compose restart router

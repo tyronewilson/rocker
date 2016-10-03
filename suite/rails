@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Running rails command in api container....."
+docker-compose run api bin/rails $@
