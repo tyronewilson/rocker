@@ -6,12 +6,12 @@ I learned a lot in the first few months of using docker. Some of what I learned 
 
 'Rocker' (I had to call it _something_) can be used as a starter project or simply as an educational guide. In essence rocker is an example project built using the following technologies and generators (in no particular order).
 
-* Docker
-* Docker Compose
-* Rails
-* Yeoman
-* Gulp
-* AngularJS
+*   Docker
+*   Docker Compose
+*   Rails
+*   Yeoman
+*   Gulp
+*   AngularJS
 
 ## Suite Scripts
 
@@ -19,9 +19,9 @@ The main working part of the code is in the glue scripts which are provided in t
 
 ### Prerequisites
 
-1. Docker
-2. Docker Compose
-3. Direnv
+1.  Docker
+2.  Docker Compose
+3.  Direnv
 
 You can install [docker][76afb1a3] and [docker-compose][82a8a185] by following their respective installation guides.
 
@@ -36,6 +36,17 @@ If you do not want to use direnv you can edit the suite scripts to use the relat
 the relative paths will change if change working directory within the project and most of the convenience is largely moot.
 
 Once you have direnv installed you can run the `direnv allow` command if required.
+
+## Overview
+
+This demo app has the following components installed
+
+Name     | Tech                         | Notes/Comments
+---------|------------------------------|---------------
+API      | Ruby on Rails                | /api
+web      | NodeJS/AngularJS/BootstrapUI | /
+postgres | PostgreSQL 9.6               | postgres:5432 (internally)
+dynamodb | AWS DynamoDB (Local)         | dynamodb (internally)
 
 ## Disclaimer
 
