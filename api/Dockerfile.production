@@ -1,0 +1,27 @@
+FROM ruby:2.3.1
+
+MAINTAINER tdubs241083@gmail.com
+
+RUN apt-get update -qq
+RUN apt-get install -y build-essential libpq-dev ruby-dev node
+
+# Install gems
+ENV GEM_HOME /usr/local/bundle
+RUN gem install bundler
+ENV BUNDLE_PATH /var/lib/bundler
+
+# This ensures that the gem docker layer only changes when the Gemfile changes
+# resulting in smaller image sizes to push
+COPY Gemfile* /tmp/
+WORKDIR /tmp
+
+RUN bundle install --jobs 8 -V --without development test
+
+# Copy code into the container
+COPY . /srv/api
+
+# Set up working directory
+WORKDIR /srv/api
+
+ENV REDIS_URL redis://store:6379
+EXPOSE 80
