@@ -29,6 +29,13 @@ services:
     volumes:
       - /var/lib/api
 
+  # EXAMPLE container for doing tdd with guard. You can change the command as appropriate
+  # tdd:
+  #   <<: *ruby_base
+  #   command: bin/guard
+  #   environment:
+  #     RAILS_ENV: test
+
   redis:
     image: redis
 
