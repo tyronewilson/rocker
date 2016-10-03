@@ -7,6 +7,7 @@ services:
     volumes:
       - ./api:/srv/api
       - ./web:/srv/web
+      - .bundler:/var/lib/bundler
 
   # Main entry point to the application
   router:
@@ -20,8 +21,16 @@ services:
   api: &ruby_base
     build: ./api
     command: script/servers/start
+    links:
+      - postgres
+      - redis
     volumes_from:
       - src
+    volumes:
+      - /var/lib/api
+
+  redis:
+    image: redis
 
   postgres:
     build: databases/postgres
