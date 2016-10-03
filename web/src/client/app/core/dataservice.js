@@ -18,7 +18,7 @@
     function getMessageCount() { return $q.when(72); }
 
     function getPeople() {
-      return $http.get('/api/people')
+      return $http.get('/web/api/people')
         .then(success)
         .catch(fail);
 
