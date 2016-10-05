@@ -31,6 +31,8 @@ services:
       - src
     volumes:
       - /var/lib/api
+    ports:
+      - 4000:80
 
   # EXAMPLE container for doing tdd with guard. You can change the command as appropriate
   # tdd:
