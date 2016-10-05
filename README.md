@@ -4,6 +4,8 @@ I learned a lot in the first few months of using docker. Some of what I learned 
 
 ## Purpose
 
+Originally created for a developer meetup and formed part of demonstration for [this presentation](https://docs.google.com/presentation/d/1ykPddaXMUMnLICwivjcv_stUwPnzniRzAt7YdkEci_g/pub?start=false&loop=false&delayms=60000)
+
 'Rocker' (I had to call it _something_) can be used as a starter project or simply as an educational guide. In essence rocker is an example project built using the following technologies and generators (in no particular order).
 
 *   Docker
