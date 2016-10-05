@@ -8,4 +8,3 @@ WORKDIR $APPLICATION_PATH
 ENV PATH="/srv/web/node_modules/.bin:$PATH"
 
 RUN npm install -g gulp bower
-RUN npm link gulp bower
