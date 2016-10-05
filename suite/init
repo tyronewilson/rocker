@@ -9,8 +9,6 @@ run web npm install
 echo "Run bower install in web container..."
 run web bower install --allow-root
 
-echo "Install gems into api container..."
 bundle
 
-echo "Reclaim generated files for developer (needs sudo)..."
 retake
