@@ -22,8 +22,8 @@ ENV APPLICATION_PORT 80
 EXPOSE $APPLICATION_PORT
 
 # Default command for image
-ENTRYPOINT ["/usr/bin/java", "-Djava.library.path=.", "-jar", "DynamoDBLocal.jar", "-dbPath", "/var/dynamodb_local"]
 CMD ["-port", $APPLICATION_PORT]
+CMD ["/usr/bin/java", "-Djava.library.path=.", "-jar", "DynamoDBLocal.jar", "-dbPath", "/var/dynamodb_local"]
 
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME ["/var/dynamodb_local", "/var/dynamodb_wd"]
