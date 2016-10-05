@@ -24,6 +24,7 @@ services:
     build: ./api
     command: script/servers/start
     links:
+      - dynamodb
       - postgres
       - redis
     volumes_from:
