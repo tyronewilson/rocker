@@ -12,6 +12,8 @@ services:
   # Main entry point to the application
   router:
     build: router
+    domainname: rocker.dev
+    ipc: host
     links:
       - api
       - web
